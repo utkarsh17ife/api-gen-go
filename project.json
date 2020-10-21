@@ -1,0 +1,79 @@
+{
+  "projectName": "sampleProject",
+  "models": [
+    {
+      "modelname": "company",
+      "api": true,
+      "properties": [
+        {
+          "name": "companyname",
+          "type": "String",
+          "default": "ey",
+          "required": true
+        },
+        {
+          "name": "dateOfRegistration",
+          "type": "Date"
+        },
+        {
+          "name": "officialAddress",
+          "type": "address"
+        },
+        {
+          "name": "employees",
+          "type": "[ref-employee]"
+        },
+        {
+          "name": "revenue",
+          "type": "String"
+        },
+        {
+          "name": "ceo",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "modelname": "employee",
+      "api": true,
+      "properties": [
+        {
+          "name": "employeeName",
+          "type": "String",
+          "default": "somename",
+          "required": true
+        },
+        {
+          "name": "contactNum",
+          "type": "String"
+        },
+        {
+          "name": "dateOfBirth",
+          "type": "Date"
+        },
+        {
+          "name": "permanentAddress",
+          "type": "address"
+        }
+      ]
+    },
+    {
+      "modelname": "address",
+      "api": false,
+      "properties": [
+        {
+          "name": "country",
+          "type": "String"
+        },
+        {
+          "name": "state",
+          "type": "String"
+        },
+        {
+          "name": "pin",
+          "type": "Number"
+        }
+      ]
+    }
+  ]
+}

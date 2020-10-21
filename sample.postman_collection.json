@@ -1,0 +1,275 @@
+{
+	"info": {
+		"_postman_id": "3978e913-d4a2-4431-a02f-99a79414104e",
+		"name": "sample",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create employee",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"data\":{\n\t\t\"employeeName\":\"tony\",\n\t\t\"contactNum\":1234567890,\n\t\t\"dateOfBirth\":\"1991-04-24T16:11:43.925Z\",\n\t\t\"permanentAddress\": {\n\t\t\t\"country\":\"India\",\n\t\t\t\"state\":\"Kerela\",\n\t\t\t\"pin\":312323\n\t\t}\n\t}\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/v1/employee",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update employee",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"data\":{\n\t\t\"employeeName\":\"tony\",\n\t\t\"contactNum\":\"0987456321\",\n\t\t\"dateOfBirth\":\"1991-04-24T16:11:43.925Z\",\n\t\t\"permanentAddress\": {\n\t\t\t\"country\":\"India\",\n\t\t\t\"state\":\"Hyd\",\n\t\t\t\"pin\":312323\n\t\t}\n\t}\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/v1/employee/5cc09b72330904001eb9daa8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"employee",
+						"5cc09b72330904001eb9daa8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "employee list",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"data\":{\n\t\t\"employeeName\":\"thanos\",\n\t\t\"contactNum\":1234567890,\n\t\t\"dateOfBirth\":\"17/03/1991\",\n\t\t\"permanentAddress\": {\n\t\t\t\"country\":\"India\",\n\t\t\t\"state\":\"Kerela\",\n\t\t\t\"pin\":312323\n\t\t}\n\t}\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/v1/employee/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"employee",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get employee by id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"data\":{\n\t\t\"employeeName\":\"thanos\",\n\t\t\"contactNum\":1234567890,\n\t\t\"dateOfBirth\":\"17/03/1991\",\n\t\t\"permanentAddress\": {\n\t\t\t\"country\":\"India\",\n\t\t\t\"state\":\"Kerela\",\n\t\t\t\"pin\":312323\n\t\t}\n\t}\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/v1/employee/5cc08ae64370110052970aac",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"employee",
+						"5cc08ae64370110052970aac"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create company",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"data\":{\n\t\t\"companyname\":\"avg\",\n\t\t\"dateOfRegistration\":\"1991-04-24T16:11:43.925Z\",\n\t\t\"officialAddress\": {\n\t\t\t\"country\":\"India\",\n\t\t\t\"state\":\"Kerela\",\n\t\t\t\"pin\":312323\n\t\t},\n\t\t\"employees\":[\"5cc09efc78336200754bd8c9\",\"5cc09f2078336200754bd8cf\"],\n\t\t\"revenue\":\"$13221\",\n\t\t\"ceo\":\"Thanos\"\n\t}\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/v1/company",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"company"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update company",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"data\":{\n            \"companyname\": \"avg\",\n            \"employees\": [\n                \"5cc09c43e8b8e8006ad683a7\",\n                \"5cc09f2078336200754bd8cf\"\n            ],\n            \"_id\": \"5cc09c57e8b8e8006ad683aa\",\n            \"dateOfRegistration\": \"1991-04-24T16:11:43.925Z\",\n            \"officialAddress\": {\n                \"_id\": \"5cc09c57e8b8e8006ad683ab\",\n                \"country\": \"India\",\n                \"state\": \"Kerela\",\n                \"pin\": 312323\n            },\n            \"revenue\": \"$13221\",\n            \"ceo\": \"Thanos\"\n        }\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/v1/company/5cc090b3db15c300d298d671",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"company",
+						"5cc090b3db15c300d298d671"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "company list",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"data\":{\n\t\t\"companyname\":\"avg\",\n\t\t\"dateOfRegistration\":\"1991-04-24T16:11:43.925Z\",\n\t\t\"officialAddress\": {\n\t\t\t\"country\":\"India\",\n\t\t\t\"state\":\"Kerela\",\n\t\t\t\"pin\":312323\n\t\t},\n\t\t\"employees\":[\"5cc08ae64370110052970aac\"],\n\t\t\"revenue\":\"$13221\",\n\t\t\"ceo\":\"Thanos\"\n\t}\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/v1/company/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"company",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get company by id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"data\":{\n\t\t\"companyname\":\"avg\",\n\t\t\"dateOfRegistration\":\"1991-04-24T16:11:43.925Z\",\n\t\t\"officialAddress\": {\n\t\t\t\"country\":\"India\",\n\t\t\t\"state\":\"Kerela\",\n\t\t\t\"pin\":312323\n\t\t},\n\t\t\"employees\":[\"5cc08ae64370110052970aac\"],\n\t\t\"revenue\":\"$13221\",\n\t\t\"ceo\":\"Thanos\"\n\t}\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/v1/company/5cc09fa978336200754bd8dd",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"company",
+						"5cc09fa978336200754bd8dd"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
